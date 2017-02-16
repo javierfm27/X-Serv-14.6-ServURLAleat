@@ -61,5 +61,11 @@ class webApp:
                             + htmlAnswer + "\r\n", 'utf-8'))
             recvSocket.close()
 
-if __name__ == "__main__":
+if __name__ == "__main__": #__name__ -> Indica que esto es el programa principal
     testWebApp = webApp("localhost", 1234)
+
+
+    #Para hererdar una clase de otra es --> class [nombre de clase nueva]([clase de la que se hereda]):
+    #Para usar la clase definida en otro modulo:
+    #   import webaap
+    #   classe [nombre_clase]([modulo].[clase])
