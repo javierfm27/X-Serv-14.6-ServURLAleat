@@ -84,8 +84,6 @@ class adiosApp(webApp):
     def __init__ (self, hostname, port):
         webApp.__init__(self, hostname,port)
 
-if __name__ == "__main__"   :
-    testAdiosApp = adiosApp('localhost',1231)
 
 #if __name__ == "__main__":
 #    testHolaApp = holaApp(socket.gethostname(),1231)
