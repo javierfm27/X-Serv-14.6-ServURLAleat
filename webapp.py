@@ -34,7 +34,7 @@ class webApp:
 
         return ("200 OK", "<html><body><h1>It works!</h1></body></html>")
 
-    def __init__(self, hostname, port):
+    def __init__(self, hostname, port): #Todos las clases tienen un _init_, que es como un constructor
         """Initialize the web application."""
 
         # Create a TCP objet socket and bind it to a port
@@ -60,9 +60,41 @@ class webApp:
             recvSocket.send(bytes("HTTP/1.1 " + returnCode + " \r\n\r\n"
                             + htmlAnswer + "\r\n", 'utf-8'))
             recvSocket.close()
+#Vamos a definir la clase holaAPP
+class holaApp(webApp):
+    def parse (self, request):
+        return None
 
-if __name__ == "__main__": #__name__ -> Indica que esto es el programa principal
-    testWebApp = webApp("localhost", 1234)
+    def process (self, parsedRequest):
+
+        return("200 Ok", "<!DOCTYPE html><html><body><h1> HOLA MUNDO </h1> </boody></html>")
+
+    def __init__ (self, hostname, port):
+        webApp.__init__(self, hostname, port)
+
+#Vamos a definir la clase adiosApp
+class adiosApp(webApp):
+    def parse (self, request):
+        return None
+
+    def process (self, parsedRequest):
+
+        return ("200 Ok" , "<!DOCTYPE html><html> ADIOS, MUNDO CRUEL </html>")
+
+    def __init__ (self, hostname, port):
+        webApp.__init__(self, hostname,port)
+
+if __name__ == "__main__"   :
+    testAdiosApp = adiosApp('localhost',1231)
+
+#if __name__ == "__main__":
+#    testHolaApp = holaApp(socket.gethostname(),1231)
+
+
+
+
+#if __name__ == "__main__": #__name__ -> Indica que esto es el programa principal
+#    testWebApp = webApp("localhost", 1234)
 
 
     #Para hererdar una clase de otra es --> class [nombre de clase nueva]([clase de la que se hereda]):
